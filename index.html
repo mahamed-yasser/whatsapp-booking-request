@@ -1,0 +1,18 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Booking Request via WhatsApp</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="top"><div><h1>Booking Request via WhatsApp</h1><p class="sub">A small business sets its WhatsApp number and services once. A customer fills the form and sends a ready-made booking request message.</p></div></header>
+<main><div class="grid2">
+<section class="panel"><h2>Customer request</h2>
+<form id="f" novalidate><label>Your name<input id="name" maxlength="60" autocomplete="name"></label>
+<label>Service<select id="svc"></select></label>
+<div class="row"><label>Preferred date<input type="date" id="date"></label><label>Preferred time<input type="time" id="time"></label></div>
+<label>Second choice date and time (optional)<input id="alt" maxlength="60" placeholder="e.g. Thursday after 5 pm"></label>
+<label>Notes (optional)<textarea id="notes" rows="3" maxlength="300"></textarea></label>
+<p class="err" id="err" role="alert" hidden></p>
+<div class="actions"><a class="btn" id="send" href="#" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center">Open WhatsApp</a><button class="ghost" id="copy" type="button">Copy message</button></div>
+<p class="mut">This sends a REQUEST. The business must reply to confirm. It does not check availability.</p></form>
+<h2>Message preview</h2><pre id="prev" style="white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:.8rem;margin:0"></pre></section>
+<section class="panel" id="setup"><h2>Business setup</h2>
+<label>Business name<input id="biz" maxlength="60"></label><label>WhatsApp number (digits with country code, e.g. 201001234567)<input id="phone" placeholder="e.g. your number with country code" inputmode="numeric" maxlength="20"></label>
+<label>Services (one per line)<textarea id="svcs" rows="5"></textarea></label><p class="err" id="serr" role="alert" hidden></p><button type="button" id="mklink" class="ghost">Make customer link</button><div id="linkbox" hidden><label>Customer link (copied)<input id="linkout" readonly></label></div><p class="mut">Settings are saved in this browser only. To let customers use your settings, click "Make customer link" and share that link: it carries your name, number and services inside the address, so it works on any device once this page is hosted at a web address (a file on your computer will only work on your computer).</p></section></div></main>
+<footer>Local tool. Opens WhatsApp with your text prefilled; nothing is stored on a server.</footer>
+<script src="util.js"></script><script src="app.js"></script></body></html>
